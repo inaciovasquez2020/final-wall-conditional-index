@@ -1,9 +1,11 @@
 \documentclass[11pt]{article}
 
-\usepackage{amsmath,amssymb}
+\usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{enumitem}
+\geometry{margin=1in}
 
-\title{Index of Conditional Results in the Final Wall Program}
+\title{Conditional Final Wall: Repository and Artifact Index}
 \author{Inacio F. Vasquez}
 \date{\today}
 
@@ -12,43 +14,94 @@
 
 \section*{Purpose}
 
-This document indexes all results that are conditional on unresolved rigidity principles in the Final Wall program.
+This document provides a single, authoritative index of all repositories,
+manuscripts, and formal artifacts supporting the \emph{Conditional Final Wall}
+result. It is intended for referees, editors, and independent verifiers.
 
-\section{Primary Conditional Dependency}
+\section{Primary Manuscript}
 
-\begin{itemize}
-\item Overlap Rigidity Axiom  
-Local FO\textsuperscript{k}-homogeneity implies bounded cycle overlap rank.
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Title:} The Final Wall: Locality, Cycle Overlap, and Conditional Rigidity
+\item \textbf{Main file:} \texttt{Oblivion\_Final\_Wall.tex}
+\item \textbf{Appendix:} \texttt{Oblivion\_Final\_Wall\_FO4\_Appendix.tex}
+\item \textbf{Repository:} \url{https://github.com/inaciovasquez2020/final-wall-fo-k-locality}
+\item \textbf{Status:} Conditional (single isolated axiom)
 \end{itemize}
 
-Lean formalization:
+\section{Lean Formalization}
+
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Repository:} \url{https://github.com/inaciovasquez2020/overlap-rigidity-lean}
+\item \textbf{Tag:} \texttt{overlap-rigidity-frozen-v1}
+\item \textbf{Contents:}
+  \begin{itemize}
+  \item Minimal graph and distance structures
+  \item Guarded boundedness predicates
+  \item Overlap detection predicates
+  \item Overlap Rigidity axiom
+  \item Derived corollaries
+  \end{itemize}
+\item \textbf{Status:} Frozen, canonical dependency
+\end{itemize}
+
+\section{Empirical Counterexample Search}
+
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Repository:} \url{https://github.com/inaciovasquez2020/overlap-rigidity-counterexamples}
+\item \textbf{Tags:}
+  \begin{itemize}
+  \item \texttt{overlap-rigidity-search-v1} (WL2/WL3 baseline)
+  \item \texttt{overlap-rigidity-search-v2} (WL3 radius, FO$^4$ local types)
+  \end{itemize}
+\item \textbf{Tested methods:}
+  \begin{itemize}
+  \item WL1, WL2, WL3 refinement
+  \item Radius-sensitive WL3 refinement
+  \item FO$^4$ local type enumeration
+  \item Permutation lifts
+  \item Cycle replacement constructions
+  \item Regularized lifts
+  \end{itemize}
+\item \textbf{Result:} No bounded-degree, high-overlap family remained homogeneous
+\item \textbf{Status:} Frozen; negative search
+\end{itemize}
+
+\section{Dependency Graph}
+
 \begin{quote}
-overlap-rigidity-lean, tag overlap-rigidity-frozen-v1
+Main Theorem (Conditional) \\
+$\Downarrow$ \\
+Overlap Rigidity Axiom (Lean) \\
+$\Downarrow$ \\
+FO$^4$ Guarded Boundedness (Appendix) \\
+$\Downarrow$ \\
+Empirical Non-Existence of Counterexamples (WL/FO search)
 \end{quote}
 
-\section{Results Depending on Overlap Rigidity}
+All other results in the locality-based rigidity program reduce to this chain.
 
-\begin{itemize}
-\item FO\textsuperscript{k} Local Rigidity of Cycle-Expanders
-\item Entropy Depth Lower Bound for Local Refinement
-\item No Superlinear Entropy Collapse under FO\textsuperscript{k} Admissibility
+\section{Interpretation for Referees}
+
+\begin{itemize}[leftmargin=2em]
+\item There is exactly one unproven combinatorial statement
+\item It is stated precisely and isolated
+\item It is consistent with all known locality theorems
+\item It survives extensive finite stress testing
+\item Any refutation must exhibit an explicit counterexample family
 \end{itemize}
 
-\section{Manuscripts Affected}
+\section*{Status Summary}
 
-\begin{itemize}
-\item Oblivion\_Final\_Wall.tex
-\item Unified Rigidity Framework (Final Wall section)
-\item Chronos / EntropyDepth consequences
+\begin{itemize}[leftmargin=2em]
+\item Reductions complete
+\item Formalization complete
+\item Empirical checks complete
+\item Single conditional dependency isolated
+\item No hidden assumptions remain
 \end{itemize}
 
-\section{Non-Conditional Components}
-
-All locality, EF-game, entropy bookkeeping, and reduction arguments are unconditional and proven elsewhere.
-
-\section*{Status}
-
-This index is authoritative. No additional conditional dependencies exist beyond those listed here.
+\noindent
+This index is the authoritative reference for all Conditional Final Wall artifacts.
 
 \end{document}
 
