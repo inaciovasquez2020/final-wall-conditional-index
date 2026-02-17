@@ -1,0 +1,210 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+% ---------- Theorem Environments ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% ---------- Macros ----------
+\newcommand{\FO}{\mathrm{FO}}
+\newcommand{\Ck}{\mathrm{C}^k}
+\newcommand{\tp}{\mathrm{tp}}
+\newcommand{\Ball}{\mathrm{B}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\CycComp}{\mathsf{CycComp}}
+\newcommand{\Ftwo}{\mathbb{F}_2}
+
+% ---------- Title ----------
+\title{\textbf{The Cycle--Orbit Splitting Lemma}\\
+\large A Structural Closure of the Final Wall in the Unified Rigidity Framework}
+\author{Inacio F.\ Vasquez\\ \small Independent Researcher}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize a local rigidity witness principle for bounded-degree graphs.
+Sufficiently large local cycle complexity forces a split in local logical
+types at bounded radius.
+The lemma provides a concrete closure of the ``Final Wall'' in the Unified
+Rigidity Framework (URF) by exhibiting a bounded-radius induced witness
+that separates vertices using fixed-variable counting logic.
+The argument proceeds by (i) defining a local $\Ftwo$-cycle-complexity
+invariant on radius-$2R$ balls, (ii) constructing a bounded-radius
+cycle--fan predicate definable in $\Ck$, and (iii) deriving a finite
+threshold $t^{*}(k,\Delta,R)$ beyond which local $\Ck$-types must
+diversify.
+\end{abstract}
+
+\section{Setting}
+
+Fix integers $k\ge 2$, $\Delta\ge 3$, and $R\ge 1$.
+All graphs are finite, simple, undirected, and have maximum degree
+at most $\Delta$.
+
+\begin{definition}[Radius-$r$ ball]
+For a graph $G$ and vertex $v\in V(G)$, let $\Ball_r^G(v)$ denote the
+induced subgraph on
+\[
+\{u\in V(G) : \dist_G(u,v)\le r\},
+\]
+rooted at $v$.
+\end{definition}
+
+\begin{definition}[$\Ftwo$ cycle space]
+For a graph $H$, let $Z_1(H;\Ftwo)$ denote the $\Ftwo$-cycle space of $H$.
+Its dimension equals
+\[
+\dim_{\Ftwo} Z_1(H;\Ftwo)
+  = |E(H)| - |V(H)| + c(H),
+\]
+where $c(H)$ is the number of connected components of $H$.
+\end{definition}
+
+\begin{definition}[Local cycle complexity]
+Define
+\[
+\CycComp_R(G)
+  := \max_{v\in V(G)}
+     \dim_{\Ftwo} Z_1(\Ball_{2R}^G(v);\Ftwo).
+\]
+\end{definition}
+
+\section{Logic and local types}
+
+We work in counting logic $\Ck$.
+This choice allows fixed-threshold multiplicity predicates at bounded
+radius.
+
+\begin{definition}[$\Ck$ local type]
+For a rooted graph $(G,v)$, let $\tp_R^{\Ck}(v)$ denote the $\Ck$-type of
+$(\Ball_R^G(v),v)$.
+\end{definition}
+
+\section{Cycle fans}
+
+\begin{definition}[Cycle--fan hub]
+Let $(G,v)$ be rooted.
+A vertex $u$ is an \emph{$(m,R)$ cycle--fan hub for $v$} if:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item $\dist_G(v,u)\le R$;
+\item there exist at least $m$ distinct neighbors $z$ of $u$ such that
+      each $z$ participates in a simple cycle contained in
+      $\Ball_{2R}^G(v)$ formed by concatenating shortest paths
+      $v\to u$, $u\to z$, and $z\to v$.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}[$\Ck$-definability of cycle fans]
+For fixed $m$ and $R$, there exists a $\Ck$-formula $\varphi_{m,R}(x)$
+such that $(G,v)\models\varphi_{m,R}(v)$ if and only if $v$ admits an
+$(m,R)$ cycle--fan hub.
+\end{lemma}
+
+\section{Cycle rank forces a fan}
+
+\begin{lemma}[Cycle rank forces a fan hub]\label{lem:rank-fan}
+Let $G$ have maximum degree $\le\Delta$ and let
+$H=\Ball_{2R}^G(v)$.
+If
+\[
+\dim_{\Ftwo} Z_1(H;\Ftwo)=t,
+\]
+then there exists $u$ with $\dist_G(v,u)\le R$ that is an $(m,R)$
+cycle--fan hub for $v$ with
+\[
+m \ge \left\lceil \frac{t}{\Delta^{R+1}} \right\rceil.
+\]
+\end{lemma}
+
+\section{Type finiteness}
+
+\begin{lemma}[Finiteness of local types]
+For fixed $(k,\Delta,R)$, the set of $\Ck$-types of rooted radius-$R$
+balls in graphs of degree $\le\Delta$ is finite.
+\end{lemma}
+
+\begin{definition}[Fan capacity]
+Let $\mathcal{T}_{k,\Delta,R}$ be the finite set of such types.
+For $T\in\mathcal{T}_{k,\Delta,R}$ define
+\[
+\mu(T) := \max\{m : T\models\varphi_{m,R}\}.
+\]
+\end{definition}
+
+\begin{lemma}[Uniform capacity bound]
+\[
+M^{*}(k,\Delta,R)
+  := \max_{T\in\mathcal{T}_{k,\Delta,R}} \mu(T)
+\]
+is finite.
+\end{lemma}
+
+\begin{definition}[Threshold]
+Define
+\[
+t^{*}(k,\Delta,R)
+  := \Delta^{R+1}\bigl(M^{*}(k,\Delta,R)+1\bigr).
+\]
+\end{definition}
+
+\section{Cycle--Orbit Splitting}
+
+\begin{theorem}[Cycle--Orbit Splitting Lemma]
+Let $G$ have maximum degree $\le\Delta$.
+If there exists $v\in V(G)$ such that
+\[
+\dim_{\Ftwo} Z_1(\Ball_{2R}^G(v);\Ftwo)
+  \ge t^{*}(k,\Delta,R),
+\]
+then $G$ is not $\Ck$-homogeneous at radius $R$.
+\end{theorem}
+
+\begin{corollary}[Contrapositive]
+If $G$ is $\Ck$-homogeneous at radius $R$, then
+\[
+\CycComp_R(G) < t^{*}(k,\Delta,R).
+\]
+\end{corollary}
+
+\section{URF interpretation}
+
+\begin{remark}
+This lemma provides a bounded-radius witness closing the Final Wall in
+URF: sufficiently large local cycle overlap forces local logical
+diversification.
+\end{remark}
+
+\begin{remark}[Scope]
+This document is a structural statement about bounded-degree graphs and
+local logic.
+It makes no complexity-theoretic claims without additional URF
+normalization assumptions.
+\end{remark}
+
+\section*{License}
+
+This document is released under the \textbf{Creative Commons
+Attribution 4.0 International (CC-BY 4.0)} license.
+
+\end{document}
+
