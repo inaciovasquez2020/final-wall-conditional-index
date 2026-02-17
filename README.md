@@ -129,10 +129,22 @@ No repository above this layer may introduce a conditional without registering i
 Refer to `PROGRAM_STATUS.tex` for the current count and classification.
 
 ---
+\section*{License and Usage}
 
-## License
+This document is released under the MIT License.
 
-CC‑BY 4.0 or MIT (choose one and record explicitly).
+Permission is granted to use, copy, and redistribute this document, with or
+without modification, provided that proper attribution to the author is
+maintained.
+
+This license applies to the \emph{presentation and distribution} of the
+document only. It does not assert the correctness of any result, does not
+constitute a claim of proof, and does not alter the explicitly conditional
+status of the reduction stated herein.
+
+All mathematical statements, implications, and reductions remain conditional
+exactly as specified in the text.
+
 
 ---
 
