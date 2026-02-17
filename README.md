@@ -153,3 +153,5 @@ exactly as specified in the text.
 The existence of this repository is a design choice: the program treats **undischarged assumptions as first‑class objects**. Nothing conditional is hidden, implicit, or informal.
 
 If a statement matters, it is indexed here.
+
+License: MIT
