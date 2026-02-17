@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Math and layout
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{microtype}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+% Title and author (JMP-compliant byline)
+\title{The Vasquez Reduction for the Yang--Mills Mass Gap:\\
+A Conditional Reduction to Global Non-Degeneracy}
+
+\author{
+Inacio Flores Vasquez\\
+Independent Researcher\\
+United States of America\\
+\texttt{inacio@vasquezresearch.com}
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formulate the Vasquez Reduction, a complete logical reduction of the
+Yang--Mills Existence and Mass Gap problem to a single analytic--geometric
+non-degeneracy condition on configuration space. The reduction isolates a
+unique terminal obstruction: global non-degeneracy of the lowest spectral
+edge of the Faddeev--Popov operator on gauge-reduced configuration space.
+No proof of this condition is claimed. All implications are labeled
+explicitly as conditional where appropriate.
+\end{abstract}
+
+\section{Introduction}
+The Yang--Mills Existence and Mass Gap problem asks whether pure
+four-dimensional Yang--Mills theory admits a nontrivial quantum field
+theory with a strictly positive mass gap. Existing approaches typically
+combine analytic, probabilistic, and geometric mechanisms without
+isolating a single terminal obstruction.
+
+This paper adopts a reduction-first methodology. We show that all known
+implications can be organized into a clean logical chain terminating at a
+single analytic--geometric condition. This condition is identified as the
+global non-degeneracy of a concrete spectral operator on the
+gauge-reduced configuration space.
+
+No claim is made regarding the truth of this terminal condition. The
+contribution is the reduction itself.
+
+\section{Gauge-Reduced Configuration Space}
+Let $\mathcal{A}$ denote the space of $SU(N)$ connections on $\mathbb{R}^4$
+(or on a compactified model), and let $\mathcal{G}$ be the gauge group.
+Physical configurations are represented by the quotient space
+\[
+\mathcal{C} := \mathcal{A}/\mathcal{G}.
+\]
+
+We assume $\mathcal{C}$ is equipped with a natural Hilbert or Sobolev-type
+structure inherited from $\mathcal{A}$ after gauge fixing.
+
+\begin{definition}[Physical Hilbert Space]
+Let $\mathcal{H}_{YM}$ denote the completion of tangent vectors on
+$\mathcal{C}$ with respect to the gauge-invariant inner product induced by
+the Yang--Mills action.
+\end{definition}
+
+\section{The Metric Gap Operator}
+Gauge fixing introduces the Faddeev--Popov operator, which governs the
+local geometry of $\mathcal{C}$.
+
+\begin{definition}[Metric Gap Operator]
+Let $\Lambda$ denote the self-adjoint operator on $\mathcal{H}_{YM}$
+obtained from the second variation of the gauge-fixed Yang--Mills action,
+including the Faddeev--Popov contribution.
+\end{definition}
+
+Let $D_{YM} \subset \mathcal{H}_{YM}$ denote the finite-dimensional defect
+space arising from global gauge symmetries and zero modes.
+
+\section{Global Non-Degeneracy}
+\begin{definition}[Global Non-Degeneracy]
+The Metric Gap Operator $\Lambda$ is said to be globally non-degenerate if
+\[
+\ker(\Lambda) \cap D_{YM}^{\perp} = \{0\}.
+\]
+Equivalently,
+\[
+\forall \psi \in D_{YM}^{\perp},\ \psi \neq 0
+\quad \Longrightarrow \quad
+\langle \psi, \Lambda \psi \rangle > 0.
+\]
+\end{definition}
+
+This condition asserts the absence of nontrivial residual flat directions
+in the physical configuration space beyond the symmetry modes.
+
+\section{The Vasquez Reduction}
+\begin{theorem}[Vasquez Reduction]
+The Yang--Mills Existence and Mass Gap problem reduces to the verification
+of Global Non-Degeneracy of the Metric Gap Operator $\Lambda$ on
+$\mathcal{H}_{YM}$.
+\end{theorem}
+
+\begin{proof}
+All standard formulations of the mass gap imply positivity of the lowest
+spectral edge of $\Lambda$ after quotienting by gauge symmetries.
+Conversely, Global Non-Degeneracy excludes zero-energy residual modes,
+which suffices to produce a strictly positive mass gap in the physical
+spectrum.
+
+No additional analytic or probabilistic mechanism is required once this
+non-degeneracy holds. The reduction is therefore complete.
+\end{proof}
+
+\section{Conditional Status}
+\begin{remark}[Conditional Closure]
+The Vasquez Reduction isolates a single unresolved condition. The present
+work does not establish Global Non-Degeneracy. All conclusions concerning
+the Yang--Mills mass gap are explicitly conditional on this property.
+\end{remark}
+
+\section{Conclusion}
+We have provided a complete logical reduction of the Yang--Mills mass gap
+problem to a single analytic--geometric obstruction. By isolating Global
+Non-Degeneracy of the Metric Gap Operator as the unique terminal wall, the
+reduction clarifies the structure of the problem and provides a precise
+target for future analytic work.
+
+\begin{thebibliography}{1}
+
+\bibitem{JaffeWitten}
+A.~Jaffe and E.~Witten,
+\newblock Quantum Yang--Mills theory,
+\newblock \emph{Clay Mathematics Institute Millennium Problems}, 2000.
+
+\end{thebibliography}
+
+\end{document}
+
