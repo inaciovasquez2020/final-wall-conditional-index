@@ -141,3 +141,5 @@ CC‑BY 4.0 or MIT (choose one and record explicitly).
 The existence of this repository is a design choice: the program treats **undischarged assumptions as first‑class objects**. Nothing conditional is hidden, implicit, or informal.
 
 If a statement matters, it is indexed here.
+
+License: MIT
