@@ -1,16 +1,11 @@
 name: Yang–Mills Conditional Disclaimer Check
-
 on:
   pull_request:
   push:
     branches: [ main ]
-
 jobs:
   disclaimer:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check conditional disclaimer
-        run: .github/scripts/check_conditional_disclaimer.sh
-
-
+      - run: .github/scripts/check_conditional_disclaimer.sh
