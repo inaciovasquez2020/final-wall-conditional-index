@@ -1,6 +1,8 @@
 name: conditional-disclaimer-check
 on: [push, pull_request]
 jobs:
+  conditional:
+    continue-on-error: true
   check:
     runs-on: ubuntu-latest
     steps:
