@@ -7,3 +7,6 @@
 
 ## 2026-03-18
 - Discharged Cyclone from conditional index; unconditional proof citation added to canonical references.
+
+## 2026-03-18
+- Cyclone discharged: unconditional block-Poincare inequality artifact integrated and verified.
