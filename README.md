@@ -81,6 +81,10 @@ The compiled index may be:
 
 ---
 
+
+## Conditional note
+- `docs/INDEX_INTEGRITY_NOTE_2026_04.md` — conditional note specifying the weakest audit-level strengthening compatible with the repository's index-only scope.
+
 ## Update policy
 
 This repository follows strict rules:
