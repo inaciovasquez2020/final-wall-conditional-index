@@ -1,6 +1,0 @@
-PWD /Users/inaciof.vasquez/github-audit/final-wall-conditional-index
-INPUT /usr/local/texlive/2025/texmf.cnf
-INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT vasquez_reduction_yang_mills.tex
-OUTPUT vasquez_reduction_yang_mills.log
