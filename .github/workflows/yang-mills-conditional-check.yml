@@ -1,4 +1,7 @@
 name: Yang–Mills Conditional Disclaimer Check
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   pull_request:
   push:
@@ -7,5 +10,6 @@ jobs:
   disclaimer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: .github/scripts/check_conditional_disclaimer.sh
+  workflow_dispatch:
