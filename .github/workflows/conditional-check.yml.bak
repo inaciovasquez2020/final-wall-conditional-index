@@ -1,19 +1,10 @@
 name: conditional-disclaimer-check
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-on:
-  push:
-  pull_request:
-  workflow_dispatch:
-
+on: [push, pull_request]
 jobs:
-  conditional:
-    continue-on-error: true
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
       - name: Verify conditional disclaimer
         run: |
           grep -q "Conditional" vasquez_reduction_yang_mills.tex

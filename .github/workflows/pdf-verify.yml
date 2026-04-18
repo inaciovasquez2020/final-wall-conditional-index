@@ -1,5 +1,8 @@
 name: pdf-verify
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
   pull_request:
@@ -8,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install TeX Live
         run: |
@@ -24,4 +27,4 @@ jobs:
         run: |
           latexmk -pdf -interaction=nonstopmode -halt-on-error Conditional_Final_Wall_Index.tex
           latexmk -pdf -interaction=nonstopmode -halt-on-error PROGRAM_STATUS.tex
-
+  workflow_dispatch:
