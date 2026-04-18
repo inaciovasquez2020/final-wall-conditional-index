@@ -6,6 +6,7 @@ env:
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -27,4 +28,3 @@ jobs:
         run: |
           latexmk -pdf -interaction=nonstopmode -halt-on-error Conditional_Final_Wall_Index.tex
           latexmk -pdf -interaction=nonstopmode -halt-on-error PROGRAM_STATUS.tex
-  workflow_dispatch:
