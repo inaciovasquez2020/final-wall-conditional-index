@@ -159,3 +159,15 @@ The existence of this repository is a design choice: the program treats **undisc
 If a statement matters, it is indexed here.
 
 License: MIT
+
+## Citation
+
+Canonical citation:
+
+> Vasquez, Inacio. *final-wall-conditional-index*. GitHub repository. Version main. 2026-04-20.
+
+Machine-readable metadata:
+
+- `CITATION.cff`
+- `CITATION.json`
+- `ATTRIBUTION.md`
